@@ -446,10 +446,12 @@ body {
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: var(--spacing-md);
     transition: var(--transition);
     box-shadow: var(--shadow-sm);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .results__card:hover {
@@ -476,6 +478,7 @@ body {
 
 .results__card-content {
     flex: 1;
+    min-width: 0;
 }
 
 .results__card-title {
@@ -492,6 +495,7 @@ body {
     font-weight: 800;
     color: var(--text);
     line-height: 1.2;
+    word-break: break-word;
 }
 
 .results__card-value--large {
@@ -587,6 +591,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    flex-shrink: 0;
 }
 
 .comparison__stats {
@@ -982,6 +987,10 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .results__card {
+        flex-direction: column;
+    }
+
     .results__card-value--large {
         font-size: 2rem;
     }
@@ -1047,6 +1056,22 @@ body {
     .form-submit {
         padding: 0.875rem var(--spacing-md);
         font-size: 0.95rem;
+    }
+
+    .results__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results__card {
+        padding: var(--spacing-md);
+    }
+
+    .results__card-value {
+        font-size: 1.25rem;
+    }
+
+    .results__card-value--large {
+        font-size: 1.75rem;
     }
 
     .tips-grid {
